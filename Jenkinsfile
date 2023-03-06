@@ -30,7 +30,7 @@ pipeline {
    }
    stage('Post to Docker-Hub') {
             steps {
-                docker.withRegistry('https://registry.hub.docker.com','	Docker-hub-creds-orih') {
+                docker.withRegistry('https://registry.hub.docker.com','Docker-hub-creds-orih') {
                     app.push("${env.BUILD_ID}")
                 }
             }
