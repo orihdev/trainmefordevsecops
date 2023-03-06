@@ -11,12 +11,13 @@ pipeline {
 
    stage('SAST') {
             steps {
-                sh ''
+                sh 'echo SAST stage'
             }
    }
    stage('Build and tag') {
             steps {
-                sh ''
+              app=docker.Build("oridevops2/snake:${env.BUILD_ID}")
+                sh 'echo Build and Tag stage'
             }
         }
    stage('Image and Vulnerability Scan') {
