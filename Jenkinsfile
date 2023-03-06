@@ -16,7 +16,7 @@ pipeline {
    }
    stage('Build and tag') {
             steps {
-              app = docker.buildImage("oridevops2/snake:${env.BUILD_ID}","--file Dockerfile .")
+              app = docker.buildImage("oridevops2/snake:${env.BUILD_ID}")
             }
         }
    stage('Image and Vulnerability Scan') {
