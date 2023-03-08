@@ -1,7 +1,7 @@
 version: '2'
 services:
   snake:
-    image: 'oridevops2/snake:1'
+    image: 'oridevops2/snake'
     environment:
       - "PORT:3000"
     ports:
