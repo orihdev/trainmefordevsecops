@@ -59,7 +59,11 @@ pipeline {
     }
    stage('DAST') {
             steps {
-                sh ''
+                 arachniScanner(
+                    url: 'http://63.34.64.229:8080',
+                    checks: 'xss, sql_injection',
+                    reportFilename: 'arachni_report.html'
+                )
             }
    }
    }
