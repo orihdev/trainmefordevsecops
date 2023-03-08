@@ -39,7 +39,7 @@ pipeline {
         }
    stage('Image and Vulnerability Scan') {
             steps {
-                sh ''
+                sh "trivy image oridevops2/snake:${env.BUILD_ID}"
             }
    }
    stage('Post to Docker-Hub') {
